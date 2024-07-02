@@ -17,7 +17,6 @@
             margin: 20px auto;
             padding: 20px;
             text-align: center;
-           
         }
         .mural h1 {
             margin-top: 0;
@@ -25,7 +24,6 @@
         .mural p {
             font-size: 1.2em;
         }
-
         .mural ul {
             list-style-type: none;
             padding: 0;
@@ -39,12 +37,22 @@
         }
         /* Estilos gerais para li fora do mural */
         li {
-           
             text-transform: uppercase;
-            
         }
-
-      
+        /* Estilos para o link destacado */
+        .highlight-link {
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .highlight-link img {
+            width: 90px; /* Ajuste conforme necessário */
+            height: auto;
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+        .highlight-link img:hover {
+            transform: scale(1.1);
+        }
     </style>
 </head>
 <body>
@@ -103,17 +111,19 @@
             <h1>Mural de Avisos</h1>
             <p>Bem-vindo ao nosso mural de avisos!</p>
             <p>Aqui você encontrará todas as informações importantes e atualizações.</p>
-            <p><b>Hórarios de antendimento Secretaria</b></p>
-            <p>Matrícula de Segunda a Quinta da das 09:00 as 17:00</p>
+            <p><b>Horários de Atendimento Secretaria</b></p>
+            <p>Matrícula de Segunda a Quinta das 09:00 às 17:00</p>
             <p>Documentos necessários originais</p>
-
-           
-
-            <li>Carteira de Identidade (RG) e CPF ou Carteira de Identidade Nacional.</li>
-            <li>Comprovante de residência atualizado</li>
-            <li>Histórico Escolar ou declaração de escolaridade ou comprovação de aproveitamento do ENCCEJA.</li>
-            <li>Certidão de Nacimento ou Casamento</li>
-           
+            <ul>
+                <li>Carteira de Identidade (RG) e CPF ou Carteira de Identidade Nacional.</li>
+                <li>Comprovante de residência atualizado</li>
+                <li>Histórico Escolar ou declaração de escolaridade ou comprovação de aproveitamento do ENCCEJA.</li>
+                <li>Certidão de Nascimento ou Casamento</li>
+                <p>Para demais dúvidas sobre notas, videos e demaia coisa acessem nossa plataforma (<strong>cejarj.cecierj.edu.br/ava</strong>) clicando no botão abaixo. OBS.  <b> o login e senha é o número de sua Matrícula.</b></p> 
+            </ul>
+            <a href="https://cejarj.cecierj.edu.br/ava" class="highlight-link" target="_blank">
+                <img src="imagens/clique-aqui.png.jpg" alt="Clique aqui">
+            </a>
         </div>
         <!-- Conteúdo principal do site -->
     </main>

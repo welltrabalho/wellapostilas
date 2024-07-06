@@ -6,9 +6,12 @@
 
     <link rel="shortcut icon" href="imagens/ico/03.ico" type="image/x-icon">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
 
     <title>APOSTILAS PARA OS ESTUDOS </title>
     <link rel="stylesheet" href="estilo2.css">
+
     <style>
         /* Estilos para o mural de avisos */
         .mural {
@@ -58,7 +61,6 @@
             transform: scale(1.1);
         }
 
-
         a {
             color: orange; /* Define a cor do link como laranja */
             text-decoration: none; /* Remove o sublinhado padrão do link */
@@ -66,7 +68,106 @@
         a:hover {
             text-decoration: underline; /* Adiciona sublinhado quando o link é hover */
         }
+       
+    
+/* Estilos gerais do rodapé */
+footer {
+    background-color: #002D42;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
 
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    
+    flex: 1;
+    margin:0px;
+    padding: 20px;
+}
+
+.footer-section h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.footer-section p {
+    line-height: 1.6;
+}
+
+.contact span {
+    display: block;
+    margin: 10px 0;
+}
+
+.socials a {
+    text-decoration: none;
+    color: #fff;
+    margin: 0 10px;
+}
+
+.socials a:hover {
+    color: #ddd;
+}
+
+.footer-bottom {
+    
+    margin-top: 20px;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin: 10px 0;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #ddd;
+}
+
+/* Estilos para dispositivos móveis */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .footer-section {
+        margin: 10px 0;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-section h2 {
+        font-size: 1.2em;
+    }
+
+    .footer-section p {
+        font-size: 0.9em;
+    }
+
+    .socials a {
+        margin: 0 5px;
+    }
+
+    .footer-bottom {
+        font-size: 0.8em;
+    }
+}
 
     </style>
 </head>
@@ -130,8 +231,8 @@
 
             <b><u>No período de 08/07 a 19/07 estaremos em recesso escolar, retornaremos dia 22/07 com nossas atividades.</u></b>
 
-
-
+            <!--recesso escolar
+           
             <p><b>Horários de Atendimento Secretaria</b></p>
             <p>Matrícula de Segunda a Quinta das 09:00 às 17:00</p>
             <p>Documentos necessários originais</p>
@@ -157,12 +258,38 @@
             <a href="https://cejarj.cecierj.edu.br/ava" class="highlight-link" target="_blank">
                 <img src="imagens/clique-aqui.png.jpg" alt="Clique aqui">
             </a>
-        </div> -->
+        </div> 
+    fim do recesso escolar apagar aqui e la em cima-->
+
         <!-- Conteúdo principal do site -->
     </main>
+
     <footer>
         <!-- Rodapé do site -->
-    </footer>
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h2 class="logo-text">CEJA-SG</h2>
+                    <p>
+                        O Centro de Educação de Jovens e Adultos de São Gonçalo oferece ensino fundamental e médio com qualidade e flexibilidade para jovens e adultos fora da idade escolar.
+                    </p>
+                    <div class="contact">
+                        <span><i class="fas fa-phone"></i> &nbsp; (21) 2725-9025</span>
+                        <span><i class="fas fa-envelope"></i> &nbsp; cejasaogoncalo.adm@gmail.com</span>
+                    </div>
+                    <div class="socials">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2024 CEJA-SG | Designed by Well
+            </div>
+        </footer>
+        
+   </footer>
     <script src="script2.js"></script>
     <div class="whatsapp-button">
         <a href="https://api.whatsapp.com/send?phone=5521989497554   &text=Olá,%20preciso%20de%20ajuda" target="_blank">

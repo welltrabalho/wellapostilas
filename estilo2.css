@@ -2,12 +2,15 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5;
+    background-image: url(imagens/img.bck/bg-login.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;        
 }
 
 header {
    
-    background-color: #6dadab;
+   /* background-color: #6dadab;*/
     padding: 10px 0;
     display: flex;
     justify-content: space-between;
@@ -100,7 +103,7 @@ main {
 }
 
 footer {
-    background-color:  #6dadab;
+    background-image: url(imagens/img.bck/bg-login.jpg);
     color: white;
     text-align: center;
     padding: 10px 0;

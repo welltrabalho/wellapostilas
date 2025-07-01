@@ -291,5 +291,53 @@ footer {
             <img src="imagens/whatsapp.png" alt="WhatsApp">
         </a>
     </div>
+    <button id="toggleHorarioBtn" style="margin: 20px auto; display: block;">Ver Horários dos Professores</button>
+
+<div id="quadroHorarios" style="display: none;" class="horario-container">
+    <h2>Horários dos Professores</h2>
+    <table class="tabela-horarios">
+        <thead>
+            <tr>
+                <th>Disciplina</th>
+                <th>Professor(a)</th>
+                <th>Dia(s)</th>
+                <th>Horário</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Matemática</td>
+                <td>Prof. João</td>
+                <td>Segunda, Quarta</td>
+                <td>10h - 12h</td>
+            </tr>
+            <tr>
+                <td>Português</td>
+                <td>Profa. Ana</td>
+                <td>Terça, Quinta</td>
+                <td>13h - 15h</td>
+            </tr>
+            <!-- Adicione mais linhas conforme necessário -->
+        </tbody>
+    </table>
+</div>
+
+<script>
+    const btn = document.getElementById('toggleHorarioBtn');
+    const quadro = document.getElementById('quadroHorarios');
+
+    btn.addEventListener('click', () => {
+        if (quadro.style.display === 'none' || quadro.style.display === '') {
+            quadro.style.display = 'block';
+            btn.textContent = 'Ocultar Horários dos Professores';
+        } else {
+            quadro.style.display = 'none';
+            btn.textContent = 'Ver Horários dos Professores';
+        }
+    });
+</script>
+
+
+
 </body>
 </html>

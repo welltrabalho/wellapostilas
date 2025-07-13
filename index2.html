@@ -304,39 +304,9 @@ footer {
                 <th>Horário</th>
             </tr>
         </thead>
-        <tbody>
-            <tr>
-                <td>Artes</td>
-                <td>Prof. Kézia</td>
-                <td>Segunda</td>
-                <td>14:40h - 20:30h</td>
-            </tr>
-             <tr>
-                <td>Artes</td>
-                <td>Prof. Kézia</td>
-                <td>Quarta</td>
-                <td>08:50h - 13:00h</td>
-            </tr>
-             <tr>
-            <tr>
-                <td>Matemática</td>
-                <td>Prof. Fernando</td>
-                <td>Segunda, Quarta, Quinta</td>
-                <td>09h - 12h</td>
-            </tr>
-             <tr>
-                <td>Matemática</td>
-                <td>Prof. Patrícia</td>
-                <td>Segunda, Quarta, Quinta</td>
-                <td>09h - 12h</td>
-            </tr>
-            <tr>
-                <td>Português</td>
-                <td>Profa. Cíntia</td>
-                <td>Terça, Quinta</td>
-                <td>12h - 15h</td>
-            </tr>
-            <!-- Adicione mais linhas conforme necessário -->
+
+        <tbody id="tbody-horarios">
+    <!-- As linhas serão inseridas via JavaScript -->
         </tbody>
     </table>
 </div>
@@ -354,6 +324,31 @@ footer {
             btn.textContent = 'Ver Horários dos Professores';
         }
     });
+
+    // Geração dinâmica das linhas da tabela de horários
+const horarios = [
+    {disciplina: "Artes", professor: "Prof. Kézia", dia: "Segunda", horario: "14:40h - 20:30h"},
+    {disciplina: "Artes", professor: "Prof. Kézia", dia: "Quarta", horario: "08:50h - 13:00h"},
+    {disciplina: "Biologia/Ciências", professor: "Prof. Elson", dia: "Segunda", horario: "08:50h - 15:30h"},
+    {disciplina: "Biologia/Ciências", professor: "Prof. Tereza", dia: "Terça", horario: "08:50h - 13:50h"},
+    {disciplina: "Biologia/Ciências", professor: "Prof. Tereza", dia: "Quarta", horario: "08:50h - 09:40h"},
+    {disciplina: "Biologia/Ciências", professor: "Prof. Elson", dia: "Quarta", horario: "13:50h - 15:30h"},
+    {disciplina: "Matemática", professor: "Prof. Fernando", dia: "Segunda, Quarta, Quinta", horario: "09h - 12h"},
+    {disciplina: "Matemática", professor: "Prof. Patrícia", dia: "Segunda, Quarta, Quinta", horario: "09h - 12h"},
+    {disciplina: "Português", professor: "Profa. Cíntia", dia: "Terça, Quinta", horario: "12h - 15h"}
+];
+
+const tbody = document.getElementById('tbody-horarios');
+if (tbody) {
+    tbody.innerHTML = horarios.map(h => `
+        <tr>
+            <td>${h.disciplina}</td>
+            <td>${h.professor}</td>
+            <td>${h.dia}</td>
+            <td>${h.horario}</td>
+        </tr>
+    `).join('');
+}
 </script>
 
 </body>

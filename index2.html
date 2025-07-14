@@ -12,6 +12,31 @@
     <link rel="stylesheet" href="estilo2.css">
 
     <style>
+/* Responsividade para a tabela de horários */
+.horario-container {
+    width: 100%;
+    overflow-x: auto;
+}
+.tabela-horarios {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 400px;
+}
+.tabela-horarios th, .tabela-horarios td {
+    word-break: break-word;
+}
+@media (max-width: 600px) {
+    .tabela-horarios th, .tabela-horarios td {
+        font-size: 0.95em;
+        padding: 8px 4px;
+    }
+    .tabela-horarios {
+        min-width: 320px;
+    }
+    .horario-container {
+        padding: 0 2px;
+    }
+}
 /* Destaque para o botão de horários */
 #toggleHorarioBtn {
     font-size: 1.1em;

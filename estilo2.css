@@ -154,13 +154,13 @@ footer {
 }
 
 .horario-container {
-    width: 90%;
-    max-width: 800px;
-    margin: 20px auto;
+    width: 95%;
+    max-width: 600px;
+    margin: 16px auto;
     background-color: #fff;
     border: 2px solid #ccc;
-    border-radius: 10px;
-    padding: 20px;
+    border-radius: 16px;
+    padding: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
@@ -171,10 +171,15 @@ footer {
     margin-top: 20px;
 }
 
+
 .tabela-horarios th, .tabela-horarios td {
     border: 1px solid #ddd;
-    padding: 10px;
+    padding: 4px 6px;
     text-align: center;
+    font-size: 0.98em;
+    white-space: wrap;
+    min-width: 80px;
+    max-width: 160px;
 }
 
 .tabela-horarios th {
@@ -183,9 +188,15 @@ footer {
 }
 
 @media (max-width: 600px) {
+    .horario-container {
+        max-width: 98vw;
+        padding: 2vw;
+    }
     .tabela-horarios th, .tabela-horarios td {
-        font-size: 0.85em;
-        padding: 6px;
+        font-size: 0.80em;
+        padding: 3px 2px;
+        min-width: 60px;
+        max-width: 100px;
     }
 
     #toggleHorarioBtn {

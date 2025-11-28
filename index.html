@@ -7,11 +7,635 @@
     <link rel="stylesheet" href="estilo.css">
 <style>
  body {
-    background-image: url(imagens/img.bck/bg-login.jpg);
+    background-image: url('imagens/fundo-da-placa-mae.jpg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;  ;
+    background-attachment: fixed;
  }
+
+ /* Estilos Flex Container - Premium */
+.flex-container {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.flex-item {
+    width: 100%;
+    padding: 50px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.97) 0%, rgba(245, 250, 255, 0.97) 100%);
+    border-radius: 20px;
+    box-shadow: 
+        0 10px 40px rgba(0, 100, 200, 0.3),
+        0 0 50px rgba(0, 150, 255, 0.2),
+        inset 0 0 30px rgba(255, 255, 255, 0.5);
+    border: 2px solid rgba(0, 150, 255, 0.4);
+    backdrop-filter: blur(10px);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
+}
+
+.flex-item::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0, 150, 255, 0.1) 0%, transparent 70%);
+    animation: shimmer 8s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes shimmer {
+    0%, 100% { transform: translateX(0) translateY(0); }
+    50% { transform: translateX(20px) translateY(-20px); }
+}
+
+.flex-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 
+        0 20px 60px rgba(0, 150, 255, 0.4),
+        0 0 80px rgba(0, 200, 255, 0.3),
+        inset 0 0 30px rgba(0, 150, 255, 0.1);
+    border: 2px solid rgba(0, 200, 255, 0.8);
+}
+
+.flex-item h1 {
+    color: #0066cc;
+    font-size: 42px;
+    margin-bottom: 30px;
+    text-shadow: 0 2px 10px rgba(0, 100, 200, 0.2);
+    letter-spacing: 1px;
+    font-weight: 800;
+    border-bottom: 4px solid rgba(0, 150, 255, 0.4);
+    padding-bottom: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+.flex-item h1::before {
+    content: '✦';
+    margin-right: 12px;
+    color: #0099ff;
+    text-shadow: 0 0 10px rgba(0, 150, 255, 0.6);
+}
+
+.flex-item p {
+    color: #333;
+    font-size: 16px;
+    line-height: 2;
+    margin-bottom: 20px;
+    text-align: justify;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s;
+}
+
+.flex-item p:hover {
+    color: #0066cc;
+    text-shadow: 0 0 5px rgba(0, 150, 255, 0.3);
+}
+
+.flex-item p strong {
+    color: #0099ff;
+    font-weight: 700;
+    background: linear-gradient(120deg, rgba(0, 150, 255, 0.1), rgba(0, 100, 200, 0.1));
+    padding: 2px 6px;
+    border-radius: 3px;
+    border-left: 3px solid #0099ff;
+}
+
+.flex-item a {
+    color: #0099ff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    border-bottom: 2px solid rgba(0, 150, 255, 0.3);
+    padding: 2px 4px;
+}
+
+.flex-item a:hover {
+    color: #0066cc;
+    border-bottom: 2px solid #0099ff;
+    text-shadow: 0 0 8px rgba(0, 150, 255, 0.5);
+}
+
+.flex-item ul {
+    margin: 25px 0;
+    padding-left: 0;
+    list-style: none;
+    position: relative;
+    z-index: 1;
+}
+
+.flex-item li {
+    margin-bottom: 14px;
+    padding-left: 35px;
+    position: relative;
+    color: #555;
+    line-height: 1.8;
+    transition: all 0.3s;
+}
+
+.flex-item li:hover {
+    color: #0066cc;
+    padding-left: 45px;
+    text-shadow: 0 0 5px rgba(0, 150, 255, 0.3);
+}
+
+.flex-item li::before {
+    content: "▶";
+    position: absolute;
+    left: 5px;
+    color: #0099ff;
+    font-weight: bold;
+    font-size: 14px;
+    text-shadow: 0 0 5px rgba(0, 150, 255, 0.6);
+    transition: all 0.3s;
+}
+
+.flex-item li:hover::before {
+    left: 0;
+    font-size: 16px;
+}
+
+/* Alerta Box - Premium */
+.alerta {
+    background: linear-gradient(135deg, rgba(255, 193, 7, 0.15) 0%, rgba(255, 152, 0, 0.15) 100%);
+    border-left: 5px solid #ff9800;
+    border-radius: 10px;
+    padding: 25px;
+    margin-top: 30px;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 0 20px rgba(255, 152, 0, 0.2);
+    backdrop-filter: blur(8px);
+}
+
+.alerta h2 {
+    color: #ff6f00;
+    font-size: 20px;
+    margin-bottom: 12px;
+    text-shadow: 0 0 5px rgba(255, 152, 0, 0.4);
+}
+
+.alerta p {
+    color: #333;
+    font-size: 15px;
+    margin: 0;
+}
+
+.formatar {
+    font-weight: 600;
+    color: #e65100 !important;
+    line-height: 1.8;
+}
+
+ /* Estilos FAQ - Design Neon Transparente */
+.faq-section {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 40px;
+    background: rgba(10, 15, 35, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 200, 255, 0.5), 
+                inset 0 0 20px rgba(0, 200, 255, 0.1);
+    border: 2px solid rgba(0, 200, 255, 0.6);
+}
+
+.faq-section h2 {
+    text-align: center;
+    color: #00ffff;
+    margin-bottom: 40px;
+    font-size: 32px;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.8), 
+                 0 0 20px rgba(0, 255, 255, 0.4);
+    letter-spacing: 2px;
+}
+
+.faq-item {
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+    transition: all 0.3s;
+}
+
+.faq-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px rgba(0, 200, 255, 0.6),
+                0 0 40px rgba(255, 0, 255, 0.3);
+}
+
+.faq-question {
+    width: 100%;
+    padding: 18px 20px;
+    background: linear-gradient(135deg, rgba(0, 100, 200, 0.6) 0%, rgba(100, 0, 200, 0.6) 100%);
+    color: #00ffff;
+    border: 1px solid rgba(0, 255, 255, 0.4);
+    text-align: left;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.6);
+    backdrop-filter: blur(5px);
+}
+
+.faq-question:hover {
+    background: linear-gradient(135deg, rgba(0, 150, 255, 0.8) 0%, rgba(150, 0, 255, 0.8) 100%);
+    padding-left: 25px;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.6),
+                inset 0 0 10px rgba(0, 255, 255, 0.2);
+    border: 1px solid rgba(0, 255, 255, 0.8);
+}
+
+.faq-question::after {
+    content: "▼";
+    font-size: 12px;
+    transition: transform 0.3s ease;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.6);
+}
+
+.faq-answer {
+    display: none;
+    padding: 25px;
+    background: rgba(20, 30, 60, 0.8);
+    color: #e0e0e0;
+    line-height: 1.8;
+    border-top: 2px solid rgba(0, 255, 255, 0.4);
+    border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+    animation: slideDown 0.3s ease;
+    backdrop-filter: blur(8px);
+}
+
+.faq-answer.active {
+    display: block;
+}
+
+.faq-answer.active + .faq-question::after {
+    transform: rotate(180deg);
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.faq-answer ul {
+    margin: 15px 0;
+    padding-left: 25px;
+    list-style: none;
+}
+
+.faq-answer li {
+    margin-bottom: 12px;
+    padding-left: 25px;
+    position: relative;
+    color: #b0e0e6;
+}
+
+.faq-answer li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #00ff00;
+    font-weight: bold;
+    font-size: 18px;
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.8);
+}
+
+.faq-answer strong {
+    color: #00ffff;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.6);
+}
+
+.faq-answer p {
+    margin: 10px 0;
+    color: #b0e0e6;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .flex-container {
+        margin: 30px auto;
+        padding: 10px;
+    }
+
+    .flex-item {
+        padding: 25px;
+        border-radius: 15px;
+    }
+
+    .flex-item h1 {
+        font-size: 28px;
+        margin-bottom: 20px;
+        padding-bottom: 12px;
+    }
+
+    .flex-item p {
+        font-size: 14px;
+        line-height: 1.7;
+        margin-bottom: 15px;
+    }
+
+    .flex-item ul {
+        margin: 15px 0;
+        padding-left: 0;
+    }
+
+    .flex-item li {
+        margin-bottom: 10px;
+        padding-left: 28px;
+        font-size: 14px;
+    }
+
+    .flex-item li::before {
+        font-size: 12px;
+        left: 0;
+    }
+
+    .alerta {
+        padding: 15px;
+        margin-top: 20px;
+        border-left: 4px solid #ff9800;
+        border-radius: 8px;
+    }
+
+    .alerta h2 {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    .alerta p {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    .formatar {
+        font-weight: 600;
+        line-height: 1.6;
+    }
+
+    .faq-section {
+        padding: 15px;
+        margin: 30px auto;
+        border-radius: 12px;
+    }
+
+    .faq-section h2 {
+        font-size: 22px;
+        margin-bottom: 20px;
+        letter-spacing: 1px;
+    }
+
+    .faq-item {
+        margin-bottom: 10px;
+        border-radius: 8px;
+    }
+
+    .faq-question {
+        padding: 14px 12px;
+        font-size: 15px;
+        font-weight: 600;
+    }
+
+    .faq-question::after {
+        font-size: 10px;
+    }
+
+    .faq-answer {
+        padding: 15px;
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .faq-answer ul {
+        padding-left: 15px;
+    }
+
+    .faq-answer li {
+        margin-bottom: 8px;
+        padding-left: 20px;
+        font-size: 13px;
+    }
+
+    .faq-answer li::before {
+        font-size: 14px;
+    }
+
+    .faq-answer p {
+        font-size: 13px;
+        margin: 8px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .flex-container {
+        margin: 20px auto;
+        padding: 5px;
+    }
+
+    .flex-item {
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 
+            0 5px 20px rgba(0, 100, 200, 0.2),
+            0 0 30px rgba(0, 150, 255, 0.1);
+    }
+
+    .flex-item h1 {
+         color: #ffffff;
+    font-size: 42px;
+    margin-bottom: 30px;
+    text-shadow: 0 2px 10px rgba(0, 100, 200, 0.2);
+    letter-spacing: 1px;
+    font-weight: 800;
+    border-bottom: 4px solid rgba(0, 150, 255, 0.4);
+    padding: 20px 25px;
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(135deg, rgba(0, 100, 200, 0.95) 0%, rgba(0, 150, 255, 0.95) 100%);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 150, 255, 0.4);
+    display: inline-block;
+    width: auto;
+    }
+
+    .flex-item h1::before {
+    content: '✦';
+    margin-right: 12px;
+    color: #00ffff;
+    text-shadow: 0 0 10px rgba(0, 150, 255, 0.8);  
+}
+
+    .flex-item p {
+        font-size: 13px;
+        line-height: 1.6;
+        margin-bottom: 12px;
+    }
+
+    .flex-item li {
+        margin-bottom: 8px;
+        padding-left: 24px;
+        font-size: 13px;
+    }
+
+    .alerta {
+        padding: 12px;
+        margin-top: 15px;
+        border-left: 3px solid #ff9800;
+    }
+
+    .alerta h2 {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+
+    .alerta p {
+        font-size: 12px;
+        line-height: 1.5;
+        text-align: justify;
+    }
+
+    .faq-section {
+        padding: 12px;
+        margin: 20px 5px;
+        border-radius: 10px;
+    }
+
+    .faq-section h2 {
+        font-size: 18px;
+        margin-bottom: 15px;
+        letter-spacing: 0.5px;
+    }
+
+    .faq-question {
+        padding: 12px 10px;
+        font-size: 14px;
+    }
+
+    .faq-answer {
+        padding: 12px;
+        font-size: 13px;
+    }
+
+    .faq-answer li {
+        padding-left: 18px;
+        font-size: 12px;
+        margin-bottom: 6px;
+    }
+
+    .faq-answer p {
+        font-size: 12px;
+        margin: 6px 0;
+    }
+}
+/* Responsivo - Título H1 */
+@media (max-width: 768px) {
+    .flex-item h1 {
+        font-size: 28px;
+        margin-bottom: 20px;
+        padding: 15px 20px;
+        border-radius: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .flex-item h1 {
+        font-size: 22px;
+        margin-bottom: 15px;
+        padding: 12px 15px;
+        border-bottom: 3px solid rgba(0, 150, 255, 0.4);
+    }
+
+    .flex-item h1::before {
+        margin-right: 8px;
+        font-size: 18px;
+    }
+}
+
+/* Alerta Box - Premium Melhorado */
+.alerta {
+    background: linear-gradient(135deg, rgba(255, 193, 7, 0.15) 0%, rgba(255, 152, 0, 0.15) 100%);
+    border-left: 5px solid #ff9800;
+    border-radius: 10px;
+    padding: 25px;
+    margin-top: 30px;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 0 20px rgba(255, 152, 0, 0.2);
+    backdrop-filter: blur(8px);
+}
+
+.alerta h2 {
+    color: #ff6f00;
+    font-size: 20px;
+    margin-bottom: 15px;
+    text-shadow: 0 0 5px rgba(255, 152, 0, 0.4);
+    font-weight: 700;
+}
+
+.alerta p {
+    color: #333;
+    font-size: 15px;
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+.alerta-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 15px 0;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 15px 20px;
+    border-radius: 8px;
+}
+
+.alerta-list li {
+    color: #333;
+    font-size: 14px;
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+    font-weight: 500;
+}
+
+.alerta-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #28a745;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.alerta .aviso {
+    background: rgba(255, 100, 0, 0.1);
+    padding: 10px;
+    border-left: 3px solid #ff6f00;
+    border-radius: 5px;
+    margin-top: 12px;
+    color: #d84315;
+    font-style: italic;
+}
 </style>
 </head>
 <body>
@@ -50,9 +674,16 @@
                     <li>Aquele que concluiu parcialmente uma série do Ensino Fundamental ou Médio, ou seja, ficou em dependência em alguma disciplina, pode finalizar a(s) disciplina(s) com pendência naquela série e prosseguir os estudos normalmente nas outras disciplinas sem precisar repetir toda a série na qual não obteve aprovação.</li>
                  </ul>
                     <div class="alerta">
-                        <h2>Alerta</h2>
-                        <p class="formatar">NÃO HÁ COBRANÇA DE TAXA DE INSCRIÇÃO PARA FAZER A MATRÍCULA NA REDE CEJA E NEM PARA O EXAME ESTADUAL DE CERTIFICAÇÃO. AS INSCRIÇÕES SÃO GRATUITAS, ASSIM COMO O MATERIAL DIDÁTICO.Solicitamos que alunos, responsáveis e demais membros da comunidade escolar, reportem imediatamente casos cobrança à direção da escola.</p>
-                        </div>
+                        <h2>⚠️ Alerta Importante</h2>
+                        <p class="formatar"><strong>NÃO HÁ COBRANÇA:</strong></p>
+                        <ul class="alerta-list">
+                            <li>✓ Taxa de inscrição para matrícula</li>
+                            <li>✓ Exame Estadual de Certificação</li>
+                            <li>✓ Material didático</li>
+                        </ul>
+                        <p class="formatar"><strong>Tudo é GRATUITO!</strong></p>
+                        <p class="formatar aviso">Se alguém cobrar, reporte imediatamente à direção da escola.</p>
+                    </div>
             </div>
                 </div>
             
@@ -63,14 +694,66 @@
         <a href="https://api.whatsapp.com/send?phone=YOUR_PHONE_NUMBER& text=Olá, gostaria de mais informações." target="_blank" class="whatsapp-button">
             <img src="imagens/whatsapp.png" alt="WhatsApp" class="whatsapp-icon">
         </a>
+
+        <!-- SEÇÃO DE PERGUNTAS FREQUENTES -->
+        <section class="faq-section">
+            <h2>❓ Perguntas Frequentes</h2>
+            
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">📋 Como fazer matrícula?</button>
+                <div class="faq-answer">
+                    <p>Para fazer matrícula no CEJA:</p>
+                    <ul>
+                        <li>Comparecer pessoalmente na unidade CEJA</li>
+                        <li>Levar documentação pessoal (RG, CPF)</li>
+                        <li>Trazer histórico escolar da última escola</li>
+                        <li><strong>100% GRATUITO</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">📄 Quais documentos preciso levar?</button>
+                <div class="faq-answer">
+                    <ul>
+                        <li><strong>RG e CPF ou CNH</strong></li>
+                        <li><strong>Comprovante de residência</strong> (conta de água, luz ou telefone)</li>
+                        <li><strong>Histórico escolar</strong> da última escola frequentada</li>
+                        <li><strong>Certidão de nascimento ou Casamento</strong> </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">🕐 Qual o horário de funcionamento da secretaria?</button>
+                <div class="faq-answer">
+                    <p><strong>Segunda a Sexta:</strong> 8h00 às 17h00</p>
+                    <p><strong>Sábado:</strong> Fechado</p>
+                    <p><strong>Domingo:</strong> Fechado</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">💰 Quanto custa a matrícula?</button>
+                <div class="faq-answer">
+                    <p><strong>A matrícula é TOTALMENTE GRATUITA!</strong></p>
+                    <p>Não há cobrança de taxa de inscrição.</p>
+                    <p>O material didático também é fornecido gratuitamente.</p>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            function toggleFAQ(button) {
+                const answer = button.nextElementSibling;
+                answer.classList.toggle('active');
+                
+                document.querySelectorAll('.faq-answer.active').forEach(item => {
+                    if (item !== answer) {
+                        item.classList.remove('active');
+                    }
+                });
+            }
+        </script>
+
     </main>
-
-    <script src="script.js"></script>
-
-   <!-- <div class="what">
-        <a href="https://wa.me/5521988797623" target="_blank">
-            <img src="imagens/whatsapp.png" width="75" alt="Fale Conosco pelo WhatsApp" title="Fale Conosco pelo WhatsApp" text=Tenho%20interesse%20em%20estudar%como20%fazer>
-        </a>
-    </div> -->
-</body>
-</html>
